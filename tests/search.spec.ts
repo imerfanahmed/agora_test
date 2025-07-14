@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Agora Community Search Functionality', () => {
-  const baseURL = 'http://agora.community.site:8005';
+
 
   test.beforeEach(async ({ page }) => {
-    await page.goto(`${baseURL}/home`);
+    await page.goto(`/home`);
   });
 
   test('should have functional search feature', async ({ page }) => {

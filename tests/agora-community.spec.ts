@@ -1,10 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Agora Community Site', () => {
-  const baseURL = 'http://agora.community.site:8005';
 
   test.beforeEach(async ({ page }) => {
-    await page.goto(`${baseURL}/home`);
+    await page.goto(`/home`);
   });
 
   test('should load the homepage successfully', async ({ page }) => {
@@ -106,7 +105,7 @@ test.describe('Agora Community Site', () => {
     await page.getByRole('navigation').getByRole('link', { name: 'Video Library' }).click();
     
     // Verify URL changed to library
-    await expect(page).toHaveURL(`${baseURL}/library`);
+    await expect(page).toHaveURL(`/library`);
     
     // Verify page title
     await expect(page).toHaveTitle(/Video Library/);
@@ -134,7 +133,7 @@ test.describe('Agora Community Site', () => {
     await page.getByRole('navigation').getByRole('link', { name: 'Discord' }).click();
     
     // Verify URL changed to discord
-    await expect(page).toHaveURL(`${baseURL}/discord`);
+    await expect(page).toHaveURL(`/discord`);
     
     // Verify page title
     await expect(page).toHaveTitle(/Discord/);
@@ -227,10 +226,10 @@ test.describe('Agora Community Site', () => {
   test('should navigate between different sections via footer links', async ({ page }) => {
     // Test navigation to Courses via footer
     await page.getByRole('link', { name: 'Courses' }).last().click();
-    await expect(page).toHaveURL(`${baseURL}/courses`);
+    await expect(page).toHaveURL(`/courses`);
     
     // Go back to home
-    await page.goto(`${baseURL}/home`);
+    await page.goto(`/home`);
     
     // Test navigation to Mentors via footer
     await page.getByRole('link', { name: 'Mentors' }).last().click();
