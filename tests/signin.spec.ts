@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 test('should sign in successfully', async ({ page }) => {
-  await page.goto('http://127.0.0.1:8005/');
+  await page.goto('/');
   await page.getByRole('banner').getByRole('button', { name: 'Join the community' }).click();
   await page.getByRole('textbox', { name: 'Email Address' }).fill('user@example.com');
   await page.getByRole('button', { name: 'Continue' }).click();
