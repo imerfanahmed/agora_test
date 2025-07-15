@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page, context }) => {
-  await page.goto('http://127.0.0.1:8005/');
+  await page.goto('/');
   await page.getByRole('banner').getByRole('button', { name: 'Join the community' }).click();
   await page.getByRole('textbox', { name: 'Email Address' }).fill('erfan.siam@agora.studio');
   await page.getByRole('button', { name: 'Continue' }).click();
