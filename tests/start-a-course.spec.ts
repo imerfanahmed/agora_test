@@ -20,6 +20,6 @@ test('should start a course', async ({ page }) => {
 
 test('should view course details', async ({ page }) => {
   await page.getByRole('list').getByRole('link', { name: 'Courses' }).click();
-  await page.getByRole('link', { name: 'First Course Title' }).click();
+  await page.getByRole('link', { name: 'Course 1' }).click();
   await expect(page.getByRole('heading', { name: 'ABOUT THIS COURSE' })).toBeVisible();
 });

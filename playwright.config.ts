@@ -24,7 +24,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    baseURL: 'http://127.0.0.1:8005/',
+    baseURL: 'http://127.0.0.1:8000/',
     trace: 'on-first-retry',
   },
 
@@ -44,23 +44,23 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-        launchOptions: {
-        },
-      },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     launchOptions: {
+    //     },
+    //   },
+    // },
 
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari'],
-        launchOptions: {
-        },
-      },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //     launchOptions: {
+    //     },
+    //   },
+    // },
 
     // Enable if you want to test mobile devices
     // {
